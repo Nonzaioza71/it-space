@@ -9,6 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;1,100;1,200&display=swap" rel="stylesheet">
 
+    <!-- DataTable -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <!-- <script src="//cdn.datatables.net/plug-ins/1.12.1/filtering/row-based/range_dates.js"></script> -->
+
     <!-- bootstrap -->
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -36,6 +42,7 @@
         $importType = 'imp';
         if ($importType == 'imp') {
     ?>
+        <script src="./views/scripts/splashScreen.js"></script>
         <script src="./views/scripts/GLOBAL.js"></script>
         <script src="./views/scripts/global.scripts.js"></script>
         <script src="./views/scripts/navController.scripts.js"></script>

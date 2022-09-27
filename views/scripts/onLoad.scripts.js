@@ -3,7 +3,6 @@ function onLoadStart() {
     try {
         clearURL()
         loadLayout()
-        .then(startLoad)
         .then(delayLoad)
     } catch (e) {
         setTimeout(onLoadStart, 10)
@@ -17,9 +16,12 @@ function delayLoad() {
         ]
     }
     const _func =() =>{
-        return [
+        try {
             ____checkIsNotUser____()
-        ]
+            new SplashScreen().close()
+        } catch (e) {
+            setTimeout(_func, 10);
+        }
     }
     setTimeout(func, 100);
     setTimeout(_func, 1000);

@@ -1,10 +1,10 @@
 <div id="delivery">
     <hr>
-    <p class="text-center">
+    <p class="text-center fs-3">
         เมนูผู้ขนส่งสินค้า
     </p>
     <li class="nav-item text-center">
-        <div class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseSale" aria-expanded="false" aria-controls="collapseSale">
+        <div class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseSale" aria-expanded="false" aria-controls="collapseSale">
             Sale
         </div>
         <div class="collapse" id="collapseSale">

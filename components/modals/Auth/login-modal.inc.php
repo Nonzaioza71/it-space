@@ -77,30 +77,47 @@ loginModal = (alert) =>{
         })
         .then(async (res)=>{
             if (res.isConfirmed) {
-                startLoad()
+                showLoading = true
                 await fetch('./controllers/checkLogin.php',{
                     method : 'POST',
                     body : JSON.stringify(useState.use('login'))
                 })
                 .then(res=>res.json())
                 .then(data=>{
-                    console.log(data.input)
+                    // console.log(data.input)
                     const _html = document.querySelector('#navAuth')
+                    const _navSup = document.querySelector('#navbarSup')
                     if (data.res) {
                         Swal.fire(
                             'ยินดีต้อนรับ',
                             'คุณ '+data.res.user_name + " " + data.res.user_lastname,
                             'success'
                         ).then(()=>{
+                            _navSup.innerHTML = /*html*/`
+                                ${
+                                    data.res
+                                    ? '<span id="navNoti" class="iconify fs-2" style="cursor: pointer;" data-icon="clarity:notification-outline-badged"></span>'
+                                    : '<span id="navNoti" class="iconify fs-2" style="cursor: pointer;" data-icon="clarity:notification-line"></span>'
+                                }
+                                ${
+                                    data.res
+                                    ? '<span id="navCart" class="iconify fs-2" style="cursor: pointer;" data-icon="clarity:shopping-cart-outline-badged"></span>'
+                                    : '<span id="navCart" class="iconify fs-2" style="cursor: pointer;" data-icon="clarity:shopping-cart-line"></span>'
+                                }
+                            `
                             _html.innerHTML = /*html*/`
-                                <span 
-                                    id="navbarAccount"
-                                    class="animate__animated animate__fadeInRight"
-                                    onClick="document.querySelector('#sidebarAccount').click()"
-                                    style="cursor:pointer;"
-                                >
-                                    ${data.res.user_name + " " + data.res.user_lastname}
-                                </span>
+                            <span 
+                                id="navbarAccount"
+                                class="animate__animated animate__fadeInRight"
+                                onClick="document.querySelector('#sidebarAccount').click()"
+                                style="cursor:pointer;"
+                            >
+                                ${  
+                                    window.innerWidth >= 600
+                                    ? data.res.user_name + " " + data.res.user_lastname
+                                    : '<span class="iconify fs-2" data-icon="fa:user-circle-o" style="vertical-align: top;"></span>'
+                                }
+                            </span>
                             `
                             useState.setState({
                                 user: data.res
@@ -111,7 +128,7 @@ loginModal = (alert) =>{
                         openAgain = true
                         msg = "ชื่อผู้ใช้ หรือ รหัสผ่าน ไม่ถูกต้อง"
                     }
-                    endLoad()
+                    showLoading = false
                 })
             }
             if (openAgain) {

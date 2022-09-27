@@ -1,10 +1,10 @@
 <div id="administrator">
     <hr>
-    <p class="text-center">
+    <p class="text-center fs-3">
         เมนูผู้ดูแลระบบ
     </p>
     <li class="nav-item text-center">
-        <div class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseSale" aria-expanded="false" aria-controls="collapseSale">
+        <div class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseSale" aria-expanded="false" aria-controls="collapseSale">
             Sale
         </div>
         <div class="collapse" id="collapseSale">
@@ -22,22 +22,22 @@
         </div>
     </li>
     <li class="nav-item text-center">
-        <div class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapsePurchase" aria-expanded="false" aria-controls="collapsePurchase">
+        <div class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapsePurchase" aria-expanded="false" aria-controls="collapsePurchase">
             Purchase
         </div>
         <div class="collapse" id="collapsePurchase">
             <div class="list-group ps-3 rounded-0">
-                <to url="?view=Category&select=Server" class="is-theme bg-dark text-light list-group-item list-group-item-action w-100 boarder text-end" style="border-color:#8c8c8c50 !important;" value="Server" id="sidebarServer">
+                <to url="?view=Purchase&select=PR" class="is-theme bg-dark text-light list-group-item list-group-item-action w-100 boarder text-end" style="border-color:#8c8c8c50 !important;" value="Server" id="sidebarServer">
                     ใบขอซื้อ (PR)
                 </to>
-                <to url="?view=Category&select=Server" class="is-theme bg-dark text-light list-group-item list-group-item-action w-100 boarder text-end" style="border-color:#8c8c8c50 !important;" value="Server" id="sidebarServer">
+                <to url="?view=Purchase&select=PO" class="is-theme bg-dark text-light list-group-item list-group-item-action w-100 boarder text-end" style="border-color:#8c8c8c50 !important;" value="Server" id="sidebarServer">
                     สั่งซื้อ (PO)
                 </to>
             </div>
         </div>
     </li>
     <li class="nav-item text-center">
-        <div class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseProduction" aria-expanded="false" aria-controls="collapseProduction">
+        <div class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseProduction" aria-expanded="false" aria-controls="collapseProduction">
             Production
         </div>
         <div class="collapse" id="collapseProduction">
@@ -55,7 +55,7 @@
         </div>
     </li>
     <li class="nav-item text-center">
-        <div class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseStock" aria-expanded="false" aria-controls="collapseStock">
+        <div class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseStock" aria-expanded="false" aria-controls="collapseStock">
             Stock
         </div>
         <div class="collapse" id="collapseStock">
@@ -79,7 +79,7 @@
         </div>
     </li>
     <li class="nav-item text-center">
-        <div class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseDataMaster" aria-expanded="false" aria-controls="collapseDataMaster">
+        <div class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseDataMaster" aria-expanded="false" aria-controls="collapseDataMaster">
             DataMaster
         </div>
         <div class="collapse" id="collapseDataMaster">

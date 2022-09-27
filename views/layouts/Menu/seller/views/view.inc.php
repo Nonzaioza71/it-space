@@ -1,10 +1,10 @@
 <div id="seller">
     <hr>
-    <p class="text-center">
+    <p class="text-center fs-3">
         เมนูผู้ขาย
     </p>
     <li class="nav-item text-center">
-        <div class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapsePurchase" aria-expanded="false" aria-controls="collapsePurchase">
+        <div class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapsePurchase" aria-expanded="false" aria-controls="collapsePurchase">
             Purchase
         </div>
         <div class="collapse" id="collapsePurchase">
@@ -19,7 +19,7 @@
         </div>
     </li>
     <li class="nav-item text-center">
-        <div class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseProduction" aria-expanded="false" aria-controls="collapseProduction">
+        <div class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseProduction" aria-expanded="false" aria-controls="collapseProduction">
             Production
         </div>
         <div class="collapse" id="collapseProduction">
@@ -34,7 +34,7 @@
         </div>
     </li>
     <li class="nav-item text-center">
-        <div class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseStock" aria-expanded="false" aria-controls="collapseStock">
+        <div class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseStock" aria-expanded="false" aria-controls="collapseStock">
             Stock
         </div>
         <div class="collapse" id="collapseStock">

@@ -26,42 +26,42 @@
     <hr>
     <list class="list-group mb-5" param="view" def="param:'view'; value:'Home'">
         <ul class="nav nav-pills flex-column mb-auto">
-            <p class="text-center">
+            <p class="text-center fs-3">
                 เมนูหลัก
             </p>
             <li class="nav-item text-center">
-                <to url="./" class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" value="" id="sidebarHome">
+                <to url="./" class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" value="" id="sidebarHome">
                     หน้าร้านค้า
                 </to>
             </li>
             <li class="nav-item text-center">
-                <to url="?view=Promotion" class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" value="Promotion" id="sidebarPromotion">
+                <to url="?view=Promotion" class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" value="Promotion" id="sidebarPromotion">
                     โปรโมชั่น
                 </to>
             </li>
             <li class="nav-item text-center">
-                <to url="?view=Favorite" class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" value="Favorite" id="sidebarFavorite">
+                <to url="?view=Favorite" class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" value="Favorite" id="sidebarFavorite">
                     รายการที่ชื่นชอบ
                 </to>
             </li>
             <li class="nav-item text-center">
-                <to url="?view=Contact" class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" value="Contact" id="sidebarContact">
+                <to url="?view=Contact" class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" value="Contact" id="sidebarContact">
                     ติดต่อสอบถาม
                 </to>
             </li>
             <li class="nav-item text-center">
-                <to url="?view=Account" class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" value="Account" id="sidebarAccount">
+                <to url="?view=Account" class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" value="Account" id="sidebarAccount">
                     บัญชี
                 </to>
             </li>
             <div id="sidebarLoginedMenu"></div>
             <div id="sidebarStaffMenu"></div>
             <hr>
-            <p class="text-center">
+            <p class="text-center fs-3">
                 หมวดหมู่สินค้า
             </p>
             <li class="nav-item text-center mt-2">
-                <div class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseComputer" aria-expanded="false" aria-controls="collapseComputer">
+                <div class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseComputer" aria-expanded="false" aria-controls="collapseComputer">
                     คอมพิวเตอร์
                 </div>
                 <div class="collapse" id="collapseComputer">
@@ -76,7 +76,7 @@
                 </div>
             </li>
             <li class="nav-item text-center">
-                <div class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseLaptop" aria-expanded="false" aria-controls="collapseLaptop">
+                <div class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseLaptop" aria-expanded="false" aria-controls="collapseLaptop">
                     แล็ปท็อป
                 </div>
                 <div class="collapse" id="collapseLaptop">
@@ -91,7 +91,7 @@
                 </div>
             </li>
             <li class="nav-item text-center">
-                <div class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapsePhone" aria-expanded="false" aria-controls="collapsePhone">
+                <div class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapsePhone" aria-expanded="false" aria-controls="collapsePhone">
                     มือถือ
                 </div>
                 <div class="collapse" id="collapsePhone">
@@ -106,7 +106,7 @@
                 </div>
             </li>
             <li class="nav-item text-center">
-                <div class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseGear" aria-expanded="false" aria-controls="collapseGear">
+                <div class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseGear" aria-expanded="false" aria-controls="collapseGear">
                     อุปกรณ์ใช้งาน
                 </div>
                 <div class="collapse" id="collapseGear">
@@ -133,7 +133,7 @@
                 </div>
             </li>
             <li class="nav-item text-center">
-                <div class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseServer" aria-expanded="false" aria-controls="collapseServer">
+                <div class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseServer" aria-expanded="false" aria-controls="collapseServer">
                     เซิฟเวอร์
                 </div>
                 <div class="collapse" id="collapseServer">
@@ -145,7 +145,7 @@
                 </div>
             </li>
             <li class="nav-item text-center">
-                <div class="is-theme bg-dark text-light border list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseHardware" aria-expanded="false" aria-controls="collapseHardware">
+                <div class="is-theme bg-dark text-light border border-dark list-group-item list-group-item-action w-100" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#collapseHardware" aria-expanded="false" aria-controls="collapseHardware">
                     ฮาร์ดแวร์คอมพิวเตอร์
                 </div>
                 <div class="collapse" id="collapseHardware">
@@ -199,10 +199,10 @@
         } else if(!isNotUser){
             MenuUI.innerHTML = ''
         }
+        await ____checkIsLogined____()
         setTimeout(()=>{
             ____checkIsNotUser____()
-            ____checkIsLogined____()
-        }, 10)
+        }, 1)
     }
 
     async function ____checkIsLogined____() {

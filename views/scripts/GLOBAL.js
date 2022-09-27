@@ -3,7 +3,7 @@ class ClassGLOBAL {
         this.API = this.#API()
     }
     #API(){
-        const url = "http://localhost/it-space/"
+        const url = reScripts(true)
         return {
             URL : url,
             Controller : url+'controllers/',

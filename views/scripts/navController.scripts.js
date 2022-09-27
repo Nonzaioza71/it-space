@@ -7,7 +7,36 @@ class NavControllers{
         this.state = {
             props : props
         }
+        this.#authResponSize()
         // console.log(this.state.props)
+    }
+
+    #authResponSize(){
+        try{
+            const _html = document.querySelector('#navAuth')
+            const user = typeof useState.use('user') === 'object' ? useState.use('user') : {}
+            const oldSize = parseInt(Boolean(useState.use('winSize')) ? useState.use('winSize') : 0)
+            const newSize = window.innerWidth
+            if ((Object.keys(user).length) && (newSize != oldSize)) {
+                useState.setState({winSize : newSize})
+                _html.innerHTML = /*html*/`
+                    <div class="d-flex gap-2">
+                        <span 
+                            id="navbarAccount"
+                            onClick="document.querySelector('#sidebarAccount').click()"
+                            style="cursor:pointer;"
+                        >
+                            ${  
+                                window.innerWidth >= 600
+                                ? useState.use('user').user_name + " " + useState.use('user').user_lastname
+                                : '<span class="iconify fs-2" data-icon="fa:user-circle-o" style="vertical-align: top;"></span>'
+                            }
+                        </span>
+                    </div>
+                `
+            }
+        }catch(e){
+        }
     }
 
     #themeToggle() {
@@ -24,11 +53,23 @@ class NavControllers{
                     ele.classList.remove('text-light')
                     ele.classList.add('text-dark')
                 }
-                document.querySelector('body').style.backgroundColor = '#ffffff'
-                if (ele.classList.contains('border')) {
+                if (ele.classList.contains('table-dark')) {
+                    ele.classList.remove('table-dark')
+                    ele.classList.add('table-light')
+                }
+                if (ele.classList.contains('btn-dark')) {
+                    ele.classList.remove('btn-dark')
+                    ele.classList.add('btn-light')
+                }
+                if (ele.classList.contains('btn-outline-light')) {
+                    ele.classList.remove('btn-outline-light')
+                    ele.classList.add('btn-outline-dark')
+                }
+                if (ele.classList.contains('border-secondary')) {
                     ele.classList.remove('border-secondary')
                     ele.classList.add('border-dark')
                 }
+                document.querySelector('body').style.backgroundColor = '#ffffff'
             } else {
                 if (ele.classList.contains('bg-whitesmoke')) {
                     ele.classList.remove('bg-whitesmoke')
@@ -38,11 +79,23 @@ class NavControllers{
                     ele.classList.remove('text-dark')
                     ele.classList.add('text-light')
                 }
-                document.querySelector('body').style.backgroundColor = '#424242'
-                if (ele.classList.contains('border')) {
+                if (ele.classList.contains('table-light')) {
+                    ele.classList.remove('table-light')
+                    ele.classList.add('table-dark')
+                }
+                if (ele.classList.contains('btn-light')) {
+                    ele.classList.remove('btn-light')
+                    ele.classList.add('btn-dark')
+                }
+                if (ele.classList.contains('btn-outline-dark')) {
+                    ele.classList.remove('btn-outline-dark')
+                    ele.classList.add('btn-outline-light')
+                }
+                if (ele.classList.contains('border-dark')) {
                     ele.classList.remove('border-dark')
                     ele.classList.add('border-secondary')
                 }
+                document.querySelector('body').style.backgroundColor = '#424242'
             }
         })
     }

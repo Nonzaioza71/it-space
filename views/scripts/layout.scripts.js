@@ -9,10 +9,15 @@ class LayoutScripts{
     }
 
     async #Route(){
+        const loadingScreen = this.state.props.loadingScreen ? this.state.props.loadingScreen : false
         const path = this.state.props.path
         const target = this.state.props.target
+
+        if (loadingScreen.start) {
+            await loadingScreen.start()
+        }
+
         const element = await fetch(path).then(res=>{ 
-            endLoad() 
             return res.text()  
         })
         const parser = new DOMParser();
@@ -24,7 +29,12 @@ class LayoutScripts{
             const new_script = document.createElement('script')
             new_script.innerHTML = scr.innerHTML
             scr.replaceWith(new_script)
-        });
+        })
+        if (loadingScreen.end) {
+            setTimeout(() => {
+                loadingScreen.end()
+            }, 1)
+        }
     }
 
     #Link(){

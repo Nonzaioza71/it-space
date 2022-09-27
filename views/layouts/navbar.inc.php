@@ -35,29 +35,35 @@
                 gap-3
             "
         >   
-            <div 
-                id="navAuth"
-                class="
-                    d-flex
-                    justify-content-center
-                    align-items-center
+        <div id="navbarSup" class="d-flex gap-3 align-self-center"></div>
+        <div 
+            id="navAuth"
+            class="
+                d-flex
+                justify-content-center
+                align-items-center
+                align-self-center
+            "
+        >
+            <span 
+                id="navbarAuth"
+                class="animate__animated animate__fadeInRight"
+                onclick="
+                    layoutScripts({
+                        path: './components/modals/Auth/login-modal.inc.php',
+                        target: document.querySelector('#modalScript'),
+                        loadingScreen: {
+                            start : ()=>{showLoading = true},
+                            end : ()=>showLoading = false,
+                        },
+                        func: 'Route'
+                    })[0]
                 "
+                style="cursor:pointer;"
             >
-                <span 
-                    id="navbarAuth"
-                    class="animate__animated animate__fadeInRight"
-                    onclick="
-                        layoutScripts({
-                            path: './components/modals/Auth/login-modal.inc.php',
-                            target: document.querySelector('#modalScript'),
-                            func: 'Route'
-                        })[0]
-                    "
-                    style="cursor:pointer;"
-                >
-                    เข้าสู่ระบบ/ลงทะเบียน
-                </span>
-            </div>
+                เข้าสู่ระบบ/ลงทะเบียน
+            </span>
+        </div>
             <div
                 is="true"
                 class="
@@ -81,20 +87,39 @@
 
     async function checkLoginNav(Alert = true) {
         const _html = document.querySelector('#navAuth')
+        const _navSup = document.querySelector('#navbarSup')
         fetch('./controllers/checkLogin.php')
         .then(res=>res.json())
         .then(data=>{
             const user = typeof useState.use('user') === 'object' ? useState.use('user') : {}
             if ((data.res) && !(Object.keys(user).length)) {
+                _navSup.innerHTML = /*html*/`
+                    ${
+                        data.res
+                        ? '<span id="navNoti" class="iconify fs-2" style="cursor: pointer;" data-icon="clarity:notification-outline-badged"></span>'
+                        : '<span id="navNoti" class="iconify fs-2" style="cursor: pointer;" data-icon="clarity:notification-line"></span>'
+                    }
+                    ${
+                        data.res
+                        ? '<span id="navCart" class="iconify fs-2" style="cursor: pointer;" data-icon="clarity:shopping-cart-outline-badged"></span>'
+                        : '<span id="navCart" class="iconify fs-2" style="cursor: pointer;" data-icon="clarity:shopping-cart-line"></span>'
+                    }
+                `
                 _html.innerHTML = /*html*/`
-                    <span 
-                        id="navbarAccount"
-                        class="animate__animated animate__fadeInRight"
-                        onClick="document.querySelector('#sidebarAccount').click()"
-                        style="cursor:pointer;"
-                    >
-                        ${data.res.user_name + " " + data.res.user_lastname}
-                    </span>
+                    <div class="d-flex gap-2">
+                        <span 
+                            id="navbarAccount"
+                            class="animate__animated animate__fadeInRight"
+                            onClick="document.querySelector('#sidebarAccount').click()"
+                            style="cursor:pointer;"
+                        >
+                            ${  
+                                window.innerWidth >= 600
+                                ? data.res.user_name + " " + data.res.user_lastname
+                                : '<span class="iconify fs-2" data-icon="fa:user-circle-o" style="vertical-align: top;"></span>'
+                            }
+                        </span>
+                    </div>
                 `
                 useState.setState({
                     user: data.res
@@ -128,17 +153,23 @@
         setTimeout(loopCheck, 5000)
     }
     async function _htmlNoUser() {
-        await fetch('./controllers/logoutUser.php')
+        await fetch(new ClassGLOBAL().API.URL+'/controllers/logoutUser.php')
         useState.remove('user')
         const _html = document.querySelector('#navAuth')
+        const _navSup = document.querySelector('#navbarSup')
+        _navSup.innerHTML = ''
         _html.innerHTML = /*html*/`
             <span 
                 id="navbarAuth"
                 class="animate__animated animate__fadeInRight"
                 onclick="
                     layoutScripts({
-                        path: './components/modals/Auth/login-modal.inc.php',
+                        path: new ClassGLOBAL().API.URL+'/components/modals/Auth/login-modal.inc.php',
                         target: document.querySelector('#modalScript'),
+                        loadingScreen: {
+                            start : ()=>{showLoading = true},
+                            end : ()=>showLoading = false,
+                        },
                         func: 'Route'
                     })[0]
                 "
